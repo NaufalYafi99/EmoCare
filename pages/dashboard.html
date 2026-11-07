@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard — Emocare</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: "#849985",
+                        "sage-dark": "#657C68",
+                        cream: "#E9E7DC",
+                        lavender: "#D9CFE8",
+                        peach: "#EBC9B8",
+                        charcoal: "#303C35",
+                        background: "#F8F7F2"
+                    },
+                    fontFamily: {
+                        sans: ["DM Sans", "sans-serif"],
+                        serif: ["Lora", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="bg-white/90 backdrop-blur border-b border-gray-100 sticky top-0 z-40">
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+            <a href="../index.html" class="text-2xl font-bold">
+                emocare<span class="text-sage">.</span>
+            </a>
+
+           <a href="../index.html" class="back-button">
+    <span class="back-icon">
+        <i class="fa-solid fa-arrow-left"></i>
+    </span>
+    <span>Back to Home</span>
+</a>
+            
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+
+        <section class="mb-12 animate-fade-up">
+            <span class="text-sage uppercase text-xs font-bold tracking-widest">
+                Your personal space
+            </span>
+
+            <h1 class="font-serif text-4xl md:text-5xl mt-4">
+                Welcome to Emocare.
+            </h1>
+
+            <p class="text-gray-500 mt-4">
+                Take a moment to check in with yourself today.
+            </p>
+        </section>
+
+        <!-- DAILY MESSAGE -->
+        <section class="bg-[#E8EDE5] rounded-3xl p-8 md:p-10 mb-10 reveal">
+
+            <span class="text-3xl">😊</span>
+
+            <h2 class="font-serif text-3xl mt-5">
+                Every feeling deserves to be understood.
+            </h2>
+
+            <p class="text-gray-500 mt-3 leading-7 max-w-2xl">
+                There is no need to judge what you feel.
+                Start by acknowledging your emotions and giving yourself
+                the space to understand them.
+            </p>
+
+        </section>
+
+        <!-- SUMMARY -->
+        <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+
+            <div class="bg-white p-7 rounded-3xl soft-shadow">
+                <p class="text-sm text-gray-400">Today's mood</p>
+                <h3 id="today-mood" class="text-2xl font-bold mt-4">Not recorded</h3>
+                <p class="text-xs text-gray-400 mt-2">Your latest mood today</p>
+            </div>
+
+            <div class="bg-white p-7 rounded-3xl soft-shadow">
+                <p class="text-sm text-gray-400">Mood records</p>
+                <h3 id="mood-count" class="text-3xl font-bold mt-4">0</h3>
+                <p class="text-xs text-gray-400 mt-2">Total mood entries</p>
+            </div>
+
+            <div class="bg-white p-7 rounded-3xl soft-shadow">
+                <p class="text-sm text-gray-400">Emotion journals</p>
+                <h3 id="journal-count" class="text-3xl font-bold mt-4">0</h3>
+                <p class="text-xs text-gray-400 mt-2">Your saved reflections</p>
+            </div>
+
+        </section>
+
+        <!-- FEATURES -->
+        <section class="mb-12">
+
+            <div class="flex justify-between items-end mb-7">
+                <div>
+                    <span class="text-sage text-xs font-bold uppercase tracking-widest">
+                        Your tools
+                    </span>
+                    <h2 class="font-serif text-3xl mt-3">Explore Emocare</h2>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <a href="./mood.html" class="bg-white p-8 rounded-3xl soft-shadow card-hover">
+                    <span class="text-3xl">☀️</span>
+                    <h3 class="font-bold text-xl mt-5">Mood Tracker</h3>
+                    <p class="text-gray-400 text-sm mt-3 leading-7">
+                        Track your emotions and recognize patterns in your daily life.
+                    </p>
+                    <span class="text-sage text-sm font-semibold inline-block mt-5">Record your mood →</span>
+                </a>
+
+                <a href="./journal.html" class="bg-white p-8 rounded-3xl soft-shadow card-hover">
+                    <span class="text-3xl">📖</span>
+                    <h3 class="font-bold text-xl mt-5">Emotion Journal</h3>
+                    <p class="text-gray-400 text-sm mt-3 leading-7">
+                        Write about your experiences and express what you feel.
+                    </p>
+                    <span class="text-sage text-sm font-semibold inline-block mt-5">Write a journal →</span>
+                </a>
+
+                <a href="./calm-room.html" class="bg-white p-8 rounded-3xl soft-shadow card-hover">
+                    <span class="text-3xl">🌿</span>
+                    <h3 class="font-bold text-xl mt-5">Calm Room</h3>
+                    <p class="text-gray-400 text-sm mt-3 leading-7">
+                        Practice breathing and simple grounding exercises.
+                    </p>
+                    <span class="text-sage text-sm font-semibold inline-block mt-5">Take a break →</span>
+                </a>
+
+                <a href="./quiz.html" class="bg-white p-8 rounded-3xl soft-shadow card-hover">
+                    <span class="text-3xl">🧠</span>
+                    <h3 class="font-bold text-xl mt-5">Interactive Quiz</h3>
+                    <p class="text-gray-400 text-sm mt-3 leading-7">
+                        Explore your understanding of emotions through learning activities.
+                    </p>
+                    <span class="text-sage text-sm font-semibold inline-block mt-5">Start learning →</span>
+                </a>
+
+                <a href="./history.html" class="bg-white p-8 rounded-3xl soft-shadow card-hover">
+                    <span class="text-3xl">🗂️</span>
+                    <h3 class="font-bold text-xl mt-5">Mood History</h3>
+                    <p class="text-gray-400 text-sm mt-3 leading-7">
+                        Revisit your saved moods, intensity levels, and personal notes.
+                    </p>
+                    <span class="text-sage text-sm font-semibold inline-block mt-5">View your history →</span>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-3xl soft-shadow">
+            <h2 class="font-serif text-2xl">A little reminder</h2>
+            <p class="text-gray-500 mt-4 leading-7">
+                Emotions are information, not instructions. You can acknowledge
+                what you feel and still choose how to respond.
+            </p>
+        </section>
+
+    
+        <!-- SUPPORT / GET HELP -->
+        <section class="support-section" data-aos="fade-up" aria-labelledby="dashboard-support-title">
+            <div class="support-card">
+                <div class="support-heading">
+                    <div class="support-icon" aria-hidden="true">♡</div>
+                    <div>
+                        <h2 id="dashboard-support-title">Need help right now?</h2>
+                        <p>You don't have to handle difficult moments alone.</p>
+                    </div>
+                </div>
+                <p class="support-description">
+                    Consider talking with a trusted adult, family member, teacher, or school counselor.
+                    You deserve to be heard and supported.
+                </p>
+                <div class="support-contact">
+                    <div>
+                        <span class="support-label">INDONESIA · PSYCHOLOGICAL FIRST SUPPORT</span>
+                        <h3>Healing119.id</h3>
+                        <p>Call 119 extension 8. For WhatsApp chat and current service information, visit the official website.</p>
+                    </div>
+                    <a href="https://www.healing119.id/" target="_blank" rel="noopener noreferrer" class="support-button">
+                        Visit Healing119 <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <p class="support-footnote">
+                    If you or someone else is in immediate danger, tell a trusted adult nearby and contact local emergency services or go to the nearest emergency department. You can stop any Emocare exercise whenever it feels uncomfortable.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-sm text-gray-400">
+        © <span data-year></span> Emocare.
+    </footer>
+
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 80,
+        delay: 50
+    });
+</script>
+
+</body>
+</html>

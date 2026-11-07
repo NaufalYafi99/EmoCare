@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood History — Emocare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: "#849985",
+                        "sage-dark": "#657C68",
+                        cream: "#E9E7DC",
+                        lavender: "#D9CFE8",
+                        peach: "#EBC9B8",
+                        charcoal: "#303C35",
+                        background: "#F8F7F2"
+                    },
+                    fontFamily: {
+                        sans: ["DM Sans", "sans-serif"],
+                        serif: ["Lora", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="bg-white/90 backdrop-blur border-b border-gray-100">
+        <nav class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-bold">emocare<span class="text-sage">.</span></a>
+            <a href="dashboard.html" class="back-button">
+                <span class="back-icon">←</span>
+                <span>Back to Dashboard</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <section class="mb-10">
+            <span class="text-sage text-xs font-bold uppercase tracking-widest">Your emotional journey</span>
+            <h1 class="font-serif text-4xl md:text-5xl mt-4">Mood History</h1>
+            <p class="text-gray-500 mt-4">A gentle space to look back at your feelings and personal notes.</p>
+        </section>
+
+        <section class="grid sm:grid-cols-2 gap-5 mb-12">
+            <div class="bg-white p-7 rounded-3xl soft-shadow">
+                <p class="text-sm text-gray-400">Total mood entries</p>
+                <h2 id="total-moods" class="font-serif text-3xl mt-3">0</h2>
+            </div>
+            <div class="bg-white p-7 rounded-3xl soft-shadow">
+                <p class="text-sm text-gray-400">Latest mood</p>
+                <h2 id="latest-mood" class="font-serif text-2xl mt-3">—</h2>
+            </div>
+        </section>
+
+        <section>
+            <div class="mb-6">
+                <h2 class="font-serif text-2xl">Your entries</h2>
+                <p class="text-gray-400 text-sm mt-2">Your newest check-ins appear first.</p>
+            </div>
+
+            <div id="mood-history-list" class="space-y-4"></div>
+
+            <div id="history-empty" class="bg-white border border-dashed border-sage/40 rounded-3xl p-10 text-center" hidden>
+                <div class="text-4xl mb-4">🌱</div>
+                <h3 class="font-serif text-xl">No mood entries yet</h3>
+                <p class="text-gray-400 text-sm mt-2">Your saved moods and notes will appear here.</p>
+                <a href="mood.html" class="inline-block mt-6 bg-sage text-white px-6 py-3 rounded-full hover:bg-sage-dark transition">Track your mood</a>
+            </div>
+        </section>
+
+        <p class="text-xs text-gray-400 leading-6 mt-10">Your entries are stored in this browser on this device. They are personal reflections, not a medical assessment or diagnosis.</p>
+    </main>
+
+    <footer class="text-center py-8 text-sm text-gray-400">© <span data-year></span> Emocare.</footer>
+
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/history.js"></script>
+</body>
+</html>

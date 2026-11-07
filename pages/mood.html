@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker — Emocare</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: "#849985",
+                        "sage-dark": "#657C68",
+                        cream: "#E9E7DC",
+                        lavender: "#D9CFE8",
+                        peach: "#EBC9B8",
+                        charcoal: "#303C35",
+                        background: "#F8F7F2"
+                    },
+                    fontFamily: {
+                        sans: ["DM Sans", "sans-serif"],
+                        serif: ["Lora", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="bg-white border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex justify-between">
+        <a href="../index.html" class="text-2xl font-bold">emocare<span class="text-sage">.</span></a>
+        <a href="dashboard.html" class="back-button">
+    <span class="back-icon">
+        <i class="fa-solid fa-arrow-left"></i>
+    </span>
+    <span>Back to Dashboard</span>
+</a>
+        
+    </nav>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-12">
+
+    <section class="mb-10 animate-fade-up">
+        <span class="text-sage text-xs font-bold uppercase tracking-widest">Daily reflection</span>
+        <h1 class="font-serif text-4xl md:text-5xl mt-4">How are you feeling?</h1>
+        <p class="text-gray-500 mt-4">Take a moment to recognize your emotions.</p>
+    </section>
+
+    <section class="bg-white rounded-3xl p-7 md:p-10 soft-shadow">
+
+        <form id="mood-form">
+
+            <h2 class="font-semibold text-lg">Choose your current mood</h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 mt-7">
+
+                <button type="button" class="mood-option border-2 border-gray-100 rounded-2xl p-5 text-center" data-mood="Senang" data-emoji="😊">
+                    <span class="text-4xl">😊</span>
+                    <p class="text-sm mt-3">Senang</p>
+                </button>
+
+                <button type="button" class="mood-option border-2 border-gray-100 rounded-2xl p-5 text-center" data-mood="Tenang" data-emoji="😌">
+                    <span class="text-4xl">😌</span>
+                    <p class="text-sm mt-3">Tenang</p>
+                </button>
+
+                <button type="button" class="mood-option border-2 border-gray-100 rounded-2xl p-5 text-center" data-mood="Sedih" data-emoji="😔">
+                    <span class="text-4xl">😔</span>
+                    <p class="text-sm mt-3">Sedih</p>
+                </button>
+
+                <button type="button" class="mood-option border-2 border-gray-100 rounded-2xl p-5 text-center" data-mood="Marah" data-emoji="😠">
+                    <span class="text-4xl">😠</span>
+                    <p class="text-sm mt-3">Marah</p>
+                </button>
+
+                <button type="button" class="mood-option border-2 border-gray-100 rounded-2xl p-5 text-center" data-mood="Cemas" data-emoji="😟">
+                    <span class="text-4xl">😟</span>
+                    <p class="text-sm mt-3">Cemas</p>
+                </button>
+
+            </div>
+
+            <input type="hidden" id="selected-mood" required>
+
+            <div class="mt-10">
+                <label class="font-semibold">How intense is this emotion?</label>
+
+                <div class="flex justify-between text-sm text-gray-400 mt-4">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+
+                <input id="intensity" type="range" min="1" max="5" value="3"
+                       class="w-full accent-[#849985] mt-3">
+
+                <p class="text-center text-sage font-bold mt-3">
+                    Intensity: <span id="intensity-value">3</span>/5
+                </p>
+            </div>
+
+            <div class="mt-9">
+                <label for="mood-note" class="font-semibold">Would you like to add a note?</label>
+                <textarea id="mood-note" rows="4"
+                          maxlength="500"
+                          placeholder="What might have influenced your mood today?"
+                          class="w-full mt-4 p-5 bg-background rounded-2xl outline-none focus:ring-2 focus:ring-sage/40 resize-none"></textarea>
+            </div>
+
+            <button type="submit"
+                    class="mt-8 bg-sage text-white px-8 py-4 rounded-full hover:bg-sage-dark transition">
+                Save my mood →
+            </button>
+
+            <p id="mood-message" class="text-sm mt-4" role="status" aria-live="polite"></p>
+
+        </form>
+
+    </section>
+
+    <section class="mt-14">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <h2 class="font-serif text-3xl">Your mood history</h2>
+            <a href="history.html" class="back-button self-start">
+                <span class="back-icon">↗</span>
+                <span>Open full history</span>
+            </a>
+        </div>
+        <div id="mood-history" class="space-y-4"></div>
+    </section>
+
+    <p class="text-xs text-gray-400 mt-10 leading-6">
+        Your mood entries are stored in this browser. They are not a medical
+        assessment or diagnosis.
+    </p>
+
+</main>
+
+<script src="../assets/js/storage.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/mood.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 80,
+        delay: 50
+    });
+</script>
+
+</body>
+</html>

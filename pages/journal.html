@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Journal — Emocare</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: "#849985",
+                        "sage-dark": "#657C68",
+                        cream: "#E9E7DC",
+                        lavender: "#D9CFE8",
+                        peach: "#EBC9B8",
+                        charcoal: "#303C35",
+                        background: "#F8F7F2"
+                    },
+                    fontFamily: {
+                        sans: ["DM Sans", "sans-serif"],
+                        serif: ["Lora", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="bg-white border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex justify-between">
+        <a href="../index.html" class="text-2xl font-bold">emocare<span class="text-sage">.</span></a>
+        <a href="dashboard.html" class="back-button">
+    <span class="back-icon">
+        <i class="fa-solid fa-arrow-left"></i>
+    </span>
+    <span>Back to Dashboard</span>
+</a>
+        
+    </nav>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-12">
+
+    <section class="mb-10">
+        <span class="text-sage text-xs font-bold tracking-widest uppercase">Personal reflection</span>
+        <h1 class="font-serif text-4xl md:text-5xl mt-4">Your emotion journal.</h1>
+        <p class="text-gray-500 mt-4">A quiet place to put your thoughts into words.</p>
+    </section>
+
+    <section class="bg-white p-7 md:p-10 rounded-3xl soft-shadow">
+
+        <form id="journal-form">
+
+            <label class="font-semibold" for="journal-title">Journal title</label>
+            <input id="journal-title" type="text" required maxlength="80"
+                   placeholder="Give your reflection a title..."
+                   class="w-full p-4 bg-background rounded-xl mt-3 outline-none focus:ring-2 focus:ring-sage/40">
+
+            <label class="font-semibold block mt-7" for="journal-emotion">
+                What are you feeling?
+            </label>
+
+            <select id="journal-emotion" required
+                    class="w-full p-4 bg-background rounded-xl mt-3 outline-none focus:ring-2 focus:ring-sage/40">
+                <option value="">Choose an emotion</option>
+                <option value="Senang">😊 Senang</option>
+                <option value="Tenang">😌 Tenang</option>
+                <option value="Sedih">😔 Sedih</option>
+                <option value="Marah">😠 Marah</option>
+                <option value="Cemas">😟 Cemas</option>
+                <option value="Bingung">😕 Bingung</option>
+                <option value="Bersyukur">💚 Bersyukur</option>
+            </select>
+
+            <label class="font-semibold block mt-7" for="journal-content">
+                Write your thoughts
+            </label>
+
+            <textarea id="journal-content" rows="8" required maxlength="5000"
+                      placeholder="What happened today? What are you thinking about? What would you like to understand?"
+                      class="w-full p-5 bg-background rounded-2xl mt-3 outline-none focus:ring-2 focus:ring-sage/40 resize-y"></textarea>
+
+            <div class="flex justify-between items-center mt-5">
+                <span id="character-count" class="text-xs text-gray-400">0/5000</span>
+
+                <button type="submit"
+                        class="bg-sage text-white px-8 py-4 rounded-full hover:bg-sage-dark transition">
+                    Save journal →
+                </button>
+            </div>
+
+            <p id="journal-message" class="text-sm mt-4" role="status" aria-live="polite"></p>
+
+        </form>
+
+    </section>
+
+    <section class="mt-14">
+        <h2 class="font-serif text-3xl mb-7">Your reflections</h2>
+        <div id="journal-list" class="space-y-5"></div>
+    </section>
+
+    <p class="text-xs text-gray-400 mt-10 leading-6">
+        Journal entries are stored locally in this browser. Avoid entering
+        passwords or highly sensitive personal information.
+    </p>
+
+</main>
+
+<script src="../assets/js/storage.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/journal.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 80,
+        delay: 50
+    });
+</script>
+
+</body>
+</html>

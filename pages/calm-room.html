@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Room — Emocare</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: "#849985",
+                        "sage-dark": "#657C68",
+                        cream: "#E9E7DC",
+                        lavender: "#D9CFE8",
+                        peach: "#EBC9B8",
+                        charcoal: "#303C35",
+                        background: "#F8F7F2"
+                    },
+                    fontFamily: {
+                        sans: ["DM Sans", "sans-serif"],
+                        serif: ["Lora", "serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="bg-white border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex justify-between">
+        <a href="../index.html" class="text-2xl font-bold">emocare<span class="text-sage">.</span></a>
+       <a href="dashboard.html" class="back-button">
+    <span class="back-icon">
+        <i class="fa-solid fa-arrow-left"></i>
+    </span>
+    <span>Back to Dashboard</span>
+</a>
+
+</div>
+    </nav>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-12">
+
+    <section class="text-center mb-14">
+        <span class="text-sage text-xs font-bold uppercase tracking-widest">Take a moment</span>
+        <h1 class="font-serif text-4xl md:text-5xl mt-5">Welcome to your calm room.</h1>
+        <p class="text-gray-500 mt-5 max-w-xl mx-auto leading-7">
+            You don't have to solve everything right now.
+            Give yourself a moment to pause.
+        </p>
+    </section>
+
+    <!-- BREATHING -->
+   
+<section
+    class="breathing-section bg-white rounded-[2rem] p-6 md:p-10 text-center"
+    data-aos="fade-up"
+>
+    <div class="mb-8">
+        <span class="text-sm font-semibold text-sage uppercase tracking-widest">
+            Calm Room
+        </span>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-3">
+            Find Your Calm
+        </h2>
+
+        <p class="text-gray-500 mt-3 max-w-md mx-auto">
+            Take a moment to slow down, breathe, and reconnect with yourself.
+        </p>
+    </div>
+
+    <!-- Breathing Animation -->
+    <div class="breathing-container">
+
+        <div class="breathing-orbit orbit-one"></div>
+        <div class="breathing-orbit orbit-two"></div>
+        <div class="breathing-orbit orbit-three"></div>
+
+        <div class="breathing-core" id="breathing-core">
+            <div class="breathing-inner">
+                <span id="breathing-phase">
+                    Ready?
+                </span>
+
+                <strong id="breathing-timer">
+                    4
+                </strong>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mt-10">
+        <p
+            id="breathing-instruction"
+            class="text-gray-500 text-sm mb-6"
+        >
+            Prepare yourself for a relaxing breathing exercise.
+        </p>
+
+        <div class="flex justify-center gap-3">
+            <button
+                id="start-breathing"
+                class="bg-sage text-white px-7 py-3 rounded-full font-semibold hover:bg-sage-dark transition"
+            >
+                Start Breathing
+            </button>
+
+            <button
+                id="stop-breathing"
+                class="bg-gray-100 text-gray-600 px-7 py-3 rounded-full font-semibold hover:bg-gray-200 transition"
+                disabled
+            >
+                Stop
+            </button>
+        </div>
+    </div>
+
+    <div class="mt-8 flex justify-center gap-8 text-sm text-gray-500">
+        <div>
+            <strong class="block text-sage text-xl">4s</strong>
+            Inhale
+        </div>
+
+        <div>
+            <strong class="block text-sage text-xl">6s</strong>
+            Exhale
+        </div>
+    </div>
+</section>
+
+
+    <!-- GROUNDING -->
+    <section class="mt-12 bg-[#E8EDE5] rounded-3xl p-8 md:p-12">
+
+        <span class="text-xs font-bold uppercase tracking-widest text-sage">
+            Grounding exercise
+        </span>
+
+        <h2 class="font-serif text-3xl mt-5">Reconnect with the present.</h2>
+
+        <p class="text-gray-500 mt-3 leading-7">
+            Notice your surroundings without rushing.
+            Move through each step at your own pace.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-8">
+
+            <div class="bg-white rounded-2xl p-5">
+                <p class="text-3xl">👀</p>
+                <h3 class="font-bold mt-4">5 things</h3>
+                <p class="text-sm text-gray-400 mt-2">You can see.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-5">
+                <p class="text-3xl">✋</p>
+                <h3 class="font-bold mt-4">4 things</h3>
+                <p class="text-sm text-gray-400 mt-2">You can feel.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-5">
+                <p class="text-3xl">👂</p>
+                <h3 class="font-bold mt-4">3 things</h3>
+                <p class="text-sm text-gray-400 mt-2">You can hear.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-5">
+                <p class="text-3xl">🌸</p>
+                <h3 class="font-bold mt-4">2 things</h3>
+                <p class="text-sm text-gray-400 mt-2">You can smell.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-5">
+                <p class="text-3xl">🍃</p>
+                <h3 class="font-bold mt-4">1 thing</h3>
+                <p class="text-sm text-gray-400 mt-2">You can taste.</p>
+            </div>
+
+        </div>
+
+        <p class="text-sm text-gray-500 mt-7">
+            You can skip any step that feels uncomfortable.
+        </p>
+
+    </section>
+
+
+    <!-- SUPPORT / GET HELP -->
+    <section class="support-section" data-aos="fade-up" aria-labelledby="calm-support-title">
+        <div class="support-card">
+            <div class="support-heading">
+                <div class="support-icon" aria-hidden="true">♡</div>
+                <div>
+                    <h2 id="calm-support-title">Need help right now?</h2>
+                    <p>You don't have to handle difficult moments alone.</p>
+                </div>
+            </div>
+            <p class="support-description">
+                A breathing or grounding exercise may help you pause, but it is okay if it does not feel helpful.
+                You can stop at any time and reach out to someone you trust, such as a family member, teacher, or school counselor.
+            </p>
+            <div class="support-contact">
+                <div>
+                    <span class="support-label">INDONESIA · PSYCHOLOGICAL FIRST SUPPORT</span>
+                    <h3>Healing119.id</h3>
+                    <p>Call 119 extension 8. For WhatsApp chat and current service information, visit the official website.</p>
+                </div>
+                <a href="https://www.healing119.id/" target="_blank" rel="noopener noreferrer" class="support-button">
+                    Visit Healing119 <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+            <p class="support-footnote">
+                If you or someone else is in immediate danger, tell a trusted adult nearby and contact local emergency services or go to the nearest emergency department.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="text-center py-8 text-sm text-gray-400">
+    © <span data-year></span> Emocare.
+</footer>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/calm-room.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 80,
+        delay: 50
+    });
+</script>
+
+</body>
+</html>
